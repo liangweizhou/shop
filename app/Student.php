@@ -10,5 +10,5 @@ class Student extends Model
     public $timestamps = false;
     protected $fillable=['name','age'];
     //不允许批量赋值
-    protected $guarded=[];
+   // protected $guarded=[];
 }

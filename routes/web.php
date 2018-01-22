@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 //Route::get('register','RigisterController');
 //Route::get('test','TestController@test1');
 Route::get('test','TestController@query');
@@ -28,9 +24,6 @@ Route::group(['middleware'=>['web']],function (){
     Route::any('session2','TestController@session2');
 });
 Route::any('response','TestController@response');
-
-
-
 
 
 Route::group(['middleware'=>['active']],function (){
@@ -52,4 +45,9 @@ Route::get('blade',function (){
 
 Route::get('hello',function (){
     return view('hello');
+});
+
+//shop项目
+Route::group(['middleware'=>['web']],function (){
+    Route::any('/','ProductController@show');
 });
