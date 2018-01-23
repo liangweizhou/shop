@@ -33,7 +33,8 @@ Route::group(['middleware'=>['active']],function (){
 
 Route::group(['middleware'=>['web']],function (){
     Route::get('student/index', 'StudentController@index');
-    Route::any('student/create', 'StudentController@create');
+    Route::get('student/create', 'StudentController@create');
+    Route::post('student/create', 'StudentController@store');
     Route::any('student/save',  'StudentController@save');
     Route::any('student/update/{id}',  'StudentController@update');
     Route::any('student/detail/{id}',  'StudentController@detail');
@@ -44,7 +45,7 @@ Route::get('blade',function (){
 });
 
 Route::get('hello',function (){
-    return view('hello');
+    return view('shop.common.layouts');
 });
 
 //shop项目

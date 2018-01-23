@@ -8,14 +8,17 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>shop </title>
+    <title>shop @yield('title')</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+@section('style')
+
+@show
 </head>
 <body>
     <div id="app">
-        <nav class="  navbar-default navbar-static-top">
+        <nav class="navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -29,8 +32,10 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        shop
                     </a>
+                    <!--换成图片也可以-->
+                    {{--<img class="" src="{{asset('')}}" href="{{'/'}}">--}}
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -71,10 +76,61 @@
             </div>
         </nav>
 
-        @yield('content')
+        <div class="container">
+            <div style="width:95%; height: 50px; background-color:#ffffff;">
+                <input id="" class="">
+            </div>
+            <div class="row">
+                <!-- 左侧菜单区域   -->
+                <div class="col-md-3">
+                    @section('leftmenu')
+                        <div class="list-group">
+                            <li class="cate_menu_item" data-index="1" clstag="h|keycount|head|category_01a">
+                                <a target="_blank" class="cate_menu_lk" href="{{'http://shop.app/dianzi'}}">家用电器</a>
+                            </li>
+                            <li class="cate_menu_item" data-index="1" clstag="h|keycount|head|category_01a">
+                                <a target="_blank" class="cate_menu_lk" href="{{'http://shop.app/shouji'}}">家用电器</a>
+                            </li>
+                            <li class="cate_menu_item" data-index="1" clstag="h|keycount|head|category_01a">
+                                <a target="_blank" class="cate_menu_lk" href="{{'http://shop.app/shouji'}}">家用电器</a>
+                            </li>
+                            <li class="cate_menu_item" data-index="1" clstag="h|keycount|head|category_01a">
+                                <a target="_blank" class="cate_menu_lk" href="{{'http://shop.app/shouji'}}">家用电器</a>
+                            </li>
+                            <li class="cate_menu_item" data-index="1" clstag="h|keycount|head|category_01a">
+                                <a target="_blank" class="cate_menu_lk" href="{{'http://shop.app/shouji'}}">家用电器</a>
+                            </li>
+                            <li class="cate_menu_item" data-index="1" clstag="h|keycount|head|category_01a">
+                                <a target="_blank" class="cate_menu_lk" href="{{'http://shop.app/shouji'}}">家用电器</a>
+                            </li>
+
+
+                            {{--<a target="_blank" href="//shop.app">电子产品</a>--}}
+                            {{--<a href="{{url(''}}" class="">穿着</a>--}}
+                            {{--<a href="{{url('')}}" class="">日用百货</a>--}}
+                        </div>
+                </div>
+            @show
+
+            <!-- 右侧内容区域 -->
+                <div class="col-md-9">
+
+                    @yield('content')
+
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
 </body>
+@section('footer')
+    <div class="jumbotron" style="position:absolute;bottom:0;width:100%;height: 5%;background-color: #f5f5f5; ">
+        <div class="container">
+            <span>  @2018 copy by zlw</span>
+        </div>
+    </div>
+@show
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
 </html>

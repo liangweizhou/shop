@@ -42,7 +42,6 @@
         <!-- 右侧内容区域 -->
         <div class="col-md-9">
 
-
             @yield('content')
 
         </div>
