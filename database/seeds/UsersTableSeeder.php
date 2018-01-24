@@ -15,20 +15,20 @@ class UsersTableSeeder extends Seeder
             ['name'=>'zlw',
             'email'=>'793926875@qq.com',
             'password'=>bcrypt('secret'),
-            'phone'=>'123456789412',
-            'address'=>'湖北省宜城市流水镇'],
+            'phone'=>'123456789412'],
+
             ['name'=>'xx',
              'email'=>'xxname@gmail.com',
              'password'=>bcrypt('secret'),
                 'phone'=>'123456521612',
-                'address'=>'湖北省宜城市流水镇'
+
         ],
 
             ['name'=>'yy',
             'email'=>'yyname@163.com',
             'password'=>bcrypt('secret'),
                 'phone'=>'123456778413',
-                'address'=>'湖北省宜城市流水镇'],
+               ],
         ]);
     }
 }

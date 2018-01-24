@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Requests;
-
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreStudent extends FormRequest
@@ -13,7 +13,7 @@ class StoreStudent extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -30,7 +30,9 @@ class StoreStudent extends FormRequest
             ];
         return $rules;
     }
-
+    protected function formatErrors(Validator $validator){
+        return $validator->errors()->all();
+    }
     public function messages()
     {
         return ['name.required'=>'不能为空',

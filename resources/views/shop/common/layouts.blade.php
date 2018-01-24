@@ -15,15 +15,18 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="author" content="AUI, a-ui.com">
     <meta name="baidu-site-verification" content="ZVPGgtpUfW"/>
-    <title>商城</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>易购商城 @yield('title')</title>
+    <link rel="icon" type="{{asset('image/x-icon')}}" href="favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="edge"/>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <link href="{{ asset('common/app.css') }}" rel="stylesheet">
-    <script src="js/jquery-1.8.3.min.js"></script>
-    {{--<script src="js/jquery.fly.min.js"></script>--}}
-    {{--<script src="js/public.js"></script>--}}
-    <script src="{{ asset('js/app.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/common.css')}}">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{asset('static/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('static/bootstrap/js/bootstrap.min.js')}}"></script>
+    {{--<script src="js/jquery-1.8.3.min.js"></script>--}}
+    <script src="{{asset('js/shop/jquery.fly.min.js')}}"></script>
+    <script src="{{asset('js/shop/public.js')}}"></script>
+    <script src="{{asset('js/shop/base.js')}}"></script>
+    <script src="{{asset('js/shop/slider.js')}}"></script>
     <script>
         document.createElement("top")
     </script>
@@ -36,9 +39,15 @@
     <script>
         document.createElement("light1")
     </script>
+
+    @section('style')
+
+    @show
+
 </head>
 <body>
-<!--头部-->
+<!--公共头部-->
+@section('top-header')
 <top>
     <section class="seck">
         <div class="dis_add">
@@ -156,9 +165,32 @@
             </div>
         </div>
         <div class="register_login">
-            <em>您好，</em>
-            <a href="#">请登录</a>
-            <a href="#">快速注册</a>
+
+                <!-- Authentication Links -->
+                @guest
+                    <a href="{{ route('login') }}">登录</a>
+                    <a href="{{ route('register') }}">注册</a>
+                 @else
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                        @endguest
         </div>
         <div class="vip_center">
             <a href="#">我的中心</a>
@@ -166,16 +198,20 @@
         </div>
     </section>
 </top>
+@show
+
 <!--header-->
 <div class="maxbj1">
+    @section('search')
     <header>
         <h1 class="logo logo-size">
             <img src="images/logo.png">
         </h1>
         <search>
-            <form>
+            <form method="post" action="">
                 <input type="text" placeholder="快点来寻找你的商品吧！" required style=" width:610px; height:34px; text-indent:2em; float:left; box-shadow:none">
-                <button>搜索</button>
+                <input type="button" value="搜索" required style="width:116px; height: 34px;text-indent: 2em; border: 1px solid;">
+              px
             </form>
         </search>
         <div class="sping_car">
@@ -183,12 +219,14 @@
             <em>我的购物车</em>
         </div>
     </header>
+        @show
 </div>
 <!--导航-->
+@section('category')
 <section class="dao_hang">
     <nav>
         <!--全部商品分类-->
-        <div class="important">
+        <div class="important" >
             <img src="images/all_list.png" style=" margin-top:13px">
             全部商品分类
             <aside style="top:42px;">
@@ -344,28 +382,89 @@
             </div>
         </div>
         <!--结束-->
+        @section('top-nav')
         <div class="dao_list">
             <a href="#">首页</a>
-            <a href="#">大聚惠</a>
-            <a href="#">易购商城</a>
-            <a href="#">电器城</a>
-            <a href="#">生活家电</a>
-            <a href="#">时尚服装</a>
-            <a href="#">海淘购</a>
-            <a href="#">特卖</a>
+            <a href="#">大优惠</a>
+            <a href="#">xx</a>
+            <a href="#">xx</a>
+            <a href="#">xx</a>
+            <a href="#">xx</a>
+            <a href="#">xx</a>
+            <a href="#">xx</a>
             <a href="#">易购专区</a>
+        </div>
+        @show
 
+        <!--中间的大广告栏图片-->
+        @yield('content')
+
+        {{--<div id="banner_tabs" class="flexslider">--}}
+            {{--<ul class="slides">--}}
+                {{--<li>--}}
+                    {{--<a title="" target="_blank" href="#">--}}
+                        {{--<img width="1920" height="500" alt="" style="background:#e1211e url(images/ba1.jpg) no-repeat center;" src="images/alpha.png">--}}
+                    {{--</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a title="" href="#">--}}
+                        {{--<img width="1920" height="500" alt="" style="background:#900 url(images/ba2.jpg) no-repeat center;" src="images/alpha.png">--}}
+                    {{--</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a title="" target="_blank" href="#">--}}
+                        {{--<img width="1920" height="500" alt="" style="background:#e1211e url(images/ba1.jpg) no-repeat center;" src="images/alpha.png">--}}
+                    {{--</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a title="" href="#">--}}
+                        {{--<img width="1920" height="500" alt="" style="background:#900 url(images/ba2.jpg) no-repeat center;" src="images/alpha.png">--}}
+                    {{--</a>--}}
+                {{--</li>--}}
+            {{--</ul>--}}
+            {{--<ul class="flex-direction-nav">--}}
+                {{--<li>--}}
+                    {{--<a class="flex-prev" href="javascript:;">Previous</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a class="flex-next" href="javascript:;">Next</a>--}}
+                {{--</li>--}}
+            {{--</ul>--}}
+            {{--<ol id="bannerCtrl" class="flex-control-nav flex-control-paging">--}}
+                {{--<li class="active">--}}
+                    {{--<a>1</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a>2</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a>2</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a>2</a>--}}
+                {{--</li>--}}
+            {{--</ol>--}}
+        {{--</div>--}}
+
+        {{--右下角的楼层导航栏--}}
+        <div class="fixed_position">
+            <div class="fixed_position_1">
+                <ul>
+                    <li>优惠</li>
+                    <li>热卖手机</li>
+                    <li>零食精选</li>
+                    <li>儿童服装</li>
+                    <li>生活必备</li>
+                    <li>推荐商品</li>
+                </ul>
+            </div>
         </div>
     </nav>
 </section>
 
-
-<div class="btnl">《</div>
-<div class="btnr">》</div>
-<h4 class="guanfangremai">推荐商品</h4>
-</div>
+@section('footer')
 <footer>
-    <div class="pc-footer-top"style="height:100px;width:100%;position:absolute;bottom:0;left:0;">
+    <div class="pc-footer-top"style=" height:100px;width:100%;position:absolute;bottom:0;left:0;">
         <div class="center">
             <ul class="clearfix">
                 <li>
@@ -413,7 +512,9 @@
         </div>
     </div>
 </footer>
-<!--侧边栏-->
+@show
+<!--右下角的便捷栏-->
+@section('toolbar')
 <div class="toolbar">
     <a href="###" class="toolbar-item toolbar-item-weixin" style=" position:relative">
         <em style=" position:absolute; display:block; line-height:20px; font-size:12px; color:#f00; top:-20px; left:0">(0)</em>
@@ -425,6 +526,6 @@
     </a>
     <a href="javascript:scroll(0,0)" id="top" class="toolbar-item toolbar-item-top"></a>
 </div>
-
+@show
 </body>
 </html>

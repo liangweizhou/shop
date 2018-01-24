@@ -18,7 +18,7 @@ Route::get('updatetest','TestController@query2');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/Home', 'HomeController@index')->name('Home');
 Route::group(['middleware'=>['web']],function (){
     Route::any('session1','TestController@session1');
     Route::any('session2','TestController@session2');
@@ -44,11 +44,13 @@ Route::get('blade',function (){
     return view('student.index');
 });
 
-Route::get('hello',function (){
-    return view('shop.common.layouts');
-});
+
 
 //shop项目
 Route::group(['middleware'=>['web']],function (){
-    Route::any('/','ProductController@show');
+    Route::get('/','HomeController@index');
 });
+
+//Route::get('hello',function (){
+//    return view('shop.Home.index');
+//});

@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{asset('css/common.css')}}" rel="stylesheet">
 @section('style')
 
 @show
@@ -48,8 +49,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">登录</a></li>
+                            <li><a href="{{ route('register') }}">注册</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
@@ -76,58 +77,57 @@
             </div>
         </nav>
 
-        <div class="container">
-            <div style="width:95%; height: 50px; background-color:#ffffff;">
-                <input id="" class="">
-            </div>
-            <div class="row">
-                <!-- 左侧菜单区域   -->
-                <div class="col-md-3">
-                    @section('leftmenu')
-                        <div class="list-group">
-                            <li class="cate_menu_item" data-index="1" clstag="h|keycount|head|category_01a">
-                                <a target="_blank" class="cate_menu_lk" href="{{'http://shop.app/dianzi'}}">家用电器</a>
-                            </li>
-                            <li class="cate_menu_item" data-index="1" clstag="h|keycount|head|category_01a">
-                                <a target="_blank" class="cate_menu_lk" href="{{'http://shop.app/shouji'}}">家用电器</a>
-                            </li>
-                            <li class="cate_menu_item" data-index="1" clstag="h|keycount|head|category_01a">
-                                <a target="_blank" class="cate_menu_lk" href="{{'http://shop.app/shouji'}}">家用电器</a>
-                            </li>
-                            <li class="cate_menu_item" data-index="1" clstag="h|keycount|head|category_01a">
-                                <a target="_blank" class="cate_menu_lk" href="{{'http://shop.app/shouji'}}">家用电器</a>
-                            </li>
-                            <li class="cate_menu_item" data-index="1" clstag="h|keycount|head|category_01a">
-                                <a target="_blank" class="cate_menu_lk" href="{{'http://shop.app/shouji'}}">家用电器</a>
-                            </li>
-                            <li class="cate_menu_item" data-index="1" clstag="h|keycount|head|category_01a">
-                                <a target="_blank" class="cate_menu_lk" href="{{'http://shop.app/shouji'}}">家用电器</a>
-                            </li>
-
-
-                            {{--<a target="_blank" href="//shop.app">电子产品</a>--}}
-                            {{--<a href="{{url(''}}" class="">穿着</a>--}}
-                            {{--<a href="{{url('')}}" class="">日用百货</a>--}}
-                        </div>
-                </div>
-            @show
-
-            <!-- 右侧内容区域 -->
-                <div class="col-md-9">
-
-                    @yield('content')
-
-                </div>
-            </div>
-        </div>
+        @yield('content')
 
     </div>
 
 </body>
 @section('footer')
-    <div class="jumbotron" style="position:absolute;bottom:0;width:100%;height: 5%;background-color: #f5f5f5; ">
-        <div class="container">
-            <span>  @2018 copy by zlw</span>
+    <div class="pc-footer-top"style="height:100px;width:100%;position:absolute;bottom:0;left:0;">
+        <div class="center">
+            <ul class="clearfix">
+                <li>
+                    <span>关于我们</span>
+                    <a href="#">关于我们</a>
+                    <a href="#">诚聘英才</a>
+                    <a href="#">用户服务协议</a>
+                    <a href="#">网站服务条款</a>
+                    <a href="#">联系我们</a>
+                </li>
+                <li class="lw">
+                    <span>购物指南</span>
+                    <a href="#">新手上路</a>
+                    <a href="#">订单查询</a>
+                    <a href="#">会员介绍</a>
+                    <a href="#">网站服务条款</a>
+                    <a href="#">帮助中心</a>
+                </li>
+                <li class="lw">
+                    <span>消费者保障</span>
+                    <a href="#">人工验货</a>
+                    <a href="#">退货退款政策</a>
+                    <a href="#">运费补贴卡</a>
+                    <a href="#">无忧售后</a>
+                    <a href="#">先行赔付</a>
+                </li>
+                <li class="lw">
+                    <span>商务合作</span>
+                    <a href="#">人工验货</a>
+                    <a href="#">退货退款政策</a>
+                    <a href="#">运费补贴卡</a>
+                    <a href="#">无忧售后</a>
+                    <a href="#">先行赔付</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="pc-footer-lin">
+            <div class="center">
+                <p>
+                    copy by zlw
+                </p>
+                <p style="padding-bottom:30px"> copy  </p>
+            </div>
         </div>
     </div>
 @show

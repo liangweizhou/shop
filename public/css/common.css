@@ -237,7 +237,7 @@ search button:hover {
     height: 15px;
     margin-top: 11px;
     overflow: hidden;
-    background: url('.') no-repeat center;
+    background: url('../images/shopping_cart1.png') no-repeat center;
 }
 
 .sping_car em {
@@ -245,7 +245,7 @@ search button:hover {
     color: #666;
     line-height: 30px;
     margin-left: 3px;
-    transition: 0.1;
+    transition: width 1s;
     cursor: pointer
 }
 
@@ -254,7 +254,7 @@ search button:hover {
 }
 
 .sping_car:hover b {
-    background: url(images/shopping_cart1.png) no-repeat center
+    background: url("../images/shopping_cart1.png") no-repeat center
 }
 
 .dao_hang {
@@ -288,7 +288,7 @@ search button:hover {
     line-height: 42px;
     cursor: pointer;
     float: left;
-    position: relative
+    position: relative;
 }
 
 .dao_hang nav .important img {
@@ -353,7 +353,7 @@ aside ul li {
 }
 
 aside ul li.li_color {
-    background:
+    background:#FF0036;
 }
 
 aside ul li h3 {
@@ -526,7 +526,7 @@ aside ul li p a:hover {
     overflow: hidden;
     margin: -35px 0 0;
     display: block;
-    background: url(images/ad_ctr1.png) no-repeat;
+    background: url("../images/ad_ctr1.png") no-repeat;
     position: absolute;
     top: 50%;
     z-index: 10;
@@ -1327,7 +1327,7 @@ footer {
 }
 
 .toolbar-item,.toolbar-layer {
-    background: url(images/toolbar.png) no-repeat;
+    background: url("../images/toolbar.png") no-repeat;
 }
 
 .toolbar {
@@ -1427,13 +1427,13 @@ footer {
 }
 
 body {
-    background: #fff
+    background: #fff;
 }
 
 .maxbj {
     width: 100%;
     height: 400px;
-    background: url(images/header-ad.jpg);
+    background: url("../images/header-ad.jpg");
     background-size: cover;
     position: relative;
     z-index: -10
@@ -1477,50 +1477,50 @@ body {
 
 .blessing_package .pick-back1{
     background: #ca4283;
-    background: -moz-linear-gradient(center,#ca4283,#eb75cf);
-    background: -webkit-gradient(linear,0 0,right 0,from(#ca4283),to(#eb75cf));
-    background: -o-linear-gradient(center,#ca4283,#eb75cf);
-    background: -ms-linear-gradient(center,#ca4283 0,#eb75cf 100%)
+    /*background: -moz-linear-gradient("center,#ca4283,#eb75cf");*/
+    /*background: -webkit-gradient(linear,0 0,right 0,from(#ca4283),to(#eb75cf));*/
+    /*background: -o-linear-gradient(center,#ca4283,#eb75cf);*/
+    /*background: -ms-linear-gradient(center,#ca4283 0,#eb75cf 100%)*/
 }
 
 .blessing_package .pick-back2{
     background: #e89621;
-    background: -moz-linear-gradient(center,#e89621,#f5c568);
-    background: -webkit-gradient(linear,0 0,right 0,from(#e89621),to(#f5c568));
-    background: -o-linear-gradient(center,#e89621,#f5c568);
-    background: -ms-linear-gradient(center,#e89621 0,#f5c568 100%)
+    /*background: -moz-linear-gradient(center,#e89621,#f5c568);*/
+    /*background: -webkit-gradient(linear,0 0,right 0,from(#e89621),to(#f5c568));*/
+    /*background: -o-linear-gradient(center,#e89621,#f5c568);*/
+    /*background: -ms-linear-gradient(center,#e89621 0,#f5c568 100%)*/
 }
 
 .blessing_package .pick-back3{
     background: #325bb4;
-    background: -moz-linear-gradient(center,#325bb4,#4c9afe);
-    background: -webkit-gradient(linear,0 0,right 0,from(#325bb4),to(#4c9afe));
-    background: -o-linear-gradient(center,#325bb4,#4c9afe);
-    background: -ms-linear-gradient(center,#325bb4 0,#4c9afe 100%)
+    /*background: -moz-linear-gradient(center,#325bb4,#4c9afe);*/
+    /*background: -webkit-gradient(linear,0 0,right 0,from(#325bb4),to(#4c9afe));*/
+    /*background: -o-linear-gradient(center,#325bb4,#4c9afe);*/
+    /*background: -ms-linear-gradient(center,#325bb4 0,#4c9afe 100%)*/
 }
 
 .blessing_package .pick-back4{
     background: #1c9daf;
-    background: -moz-linear-gradient(center,#1c9daf,#40cda7);
-    background: -webkit-gradient(linear,0 0,right 0,from(#1c9daf),to(#40cda7));
-    background: -o-linear-gradient(center,#1c9daf,#40cda7);
-    background: -ms-linear-gradient(center,#1c9daf 0,#40cda7 100%)
+    /*background: -moz-linear-gradient(center,#1c9daf,#40cda7);*/
+    /*background: -webkit-gradient(linear,0 0,right 0,from(#1c9daf),to(#40cda7));*/
+    /*background: -o-linear-gradient(center,#1c9daf,#40cda7);*/
+    /*background: -ms-linear-gradient(center,#1c9daf 0,#40cda7 100%)*/
 
 }
 
 .blessing_package .pick-back5{
     background: #d13837;
-    background: -moz-linear-gradient(center,#d13837,#df6d4f);
-    background: -webkit-gradient(linear,0 0,right 0,from(#d13837),to(#df6d4f));
-    background: -o-linear-gradient(center,#d13837,#df6d4f);
-    background: -ms-linear-gradient(center,#d13837 0,#df6d4f 100%)
+    /*background: -moz-linear-gradient(center,#d13837,#df6d4f);*/
+    /*background: -webkit-gradient(linear,0 0,right 0,from(#d13837),to(#df6d4f));*/
+    /*background: -o-linear-gradient(center,#d13837,#df6d4f);*/
+    /*background: -ms-linear-gradient(center,#d13837 0,#df6d4f 100%)*/
 }
 .blessing_package .pick-back6{
     background: #6ea166;
-    background: -moz-linear-gradient(center,#6ea166,#9fc766);
-    background: -webkit-gradient(linear,0 0,right 0,from(#6ea166),to(#9fc766));
-    background: -o-linear-gradient(center,#6ea166,#9fc766);
-    background: -ms-linear-gradient(center,#6ea166 0,#9fc766 100%)
+    /*background: -moz-linear-gradient(center,#6ea166,#9fc766);*/
+    /*background: -webkit-gradient(linear,0 0,right 0,from(#6ea166),to(#9fc766));*/
+    /*background: -o-linear-gradient(center,#6ea166,#9fc766);*/
+    /*background: -ms-linear-gradient(center,#6ea166 0,#9fc766 100%)*/
 }
 
 

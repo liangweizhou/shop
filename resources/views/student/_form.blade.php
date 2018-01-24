@@ -24,19 +24,13 @@
     <div class="form-group">
         <label class="col-sm-2 control-label">性别</label>
 
-        <div class="col-sm-5">
-
                 <label class="radio-inline">
-                    <input type="radio" name='sex'>
-                    <input type="radio" name='sex'>
-                    <input type="radio" name='sex'>
-                    <input type="radio" name='sex'>
+                   男：<input type="radio" name='man'>
                 </label>
+                 <label class="radio-inline">
+                女： <input type="radio" name='woman'>
+                 </label>
 
-        </div>
-        <div class="col-sm-5">
-            <p class="form-control-static text-danger">{{$errors->first('Student.sex')}}</p>
-        </div>
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
