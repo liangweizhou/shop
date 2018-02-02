@@ -25,4 +25,8 @@ class HomeController extends Controller
     {
         return view('shop.home.index');
     }
+
+    public function center(){
+        return view('shop.common.center');
+    }
 }

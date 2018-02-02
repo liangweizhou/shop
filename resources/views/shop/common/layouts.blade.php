@@ -57,7 +57,7 @@
             <div class="hide_add">
                 <ul>
                     <li>
-                        <a href="javascript:void(0)">北京</a>
+                        <a href="javascript:void(0)" class="selected">北京</a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">上海</a>
@@ -93,7 +93,7 @@
                         <a href="javascript:void(0)">江苏</a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)" class="selected">山东</a>
+                        <a href="javascript:void(0)">山东</a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">安徽</a>
@@ -193,7 +193,7 @@
                         @endguest
         </div>
         <div class="vip_center">
-            <a href="#">我的中心</a>
+            <a href="center">我的中心</a>
             <a href="#">帮助</a>
         </div>
     </section>
@@ -205,7 +205,7 @@
     @section('search')
     <header>
         <h1 class="logo logo-size">
-            <img src="images/logo.png">
+            <a href="/"><img src="images/logo.png"></a>
         </h1>
         <search>
             <form method="post" action="">
@@ -384,7 +384,7 @@
         <!--结束-->
         @section('top-nav')
         <div class="dao_list">
-            <a href="#">首页</a>
+            <a href="/">首页</a>
             <a href="#">大优惠</a>
             <a href="#">xx</a>
             <a href="#">xx</a>
@@ -507,7 +507,7 @@
                 <p>
                     copy by zlw
                 </p>
-                <p style="padding-bottom:30px"> copy  </p>
+                {{--<p style="padding-bottom:30px"> copy  </p>--}}
             </div>
         </div>
     </div>

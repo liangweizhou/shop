@@ -48,9 +48,54 @@ Route::get('blade',function (){
 
 //shop项目
 Route::group(['middleware'=>['web']],function (){
+    //主页
     Route::get('/','HomeController@index');
+    //个人中心
+    Route::get('/center','HomeController@center');
+    //
+});
+Route::group(['prefix'=>'center'],function (){
+    //个人信息与修改
+    Route::get('/info','CenterController@showInfo');
+   Route::put('/updateinfo','CenterController@updateInfo');
+    Route::get('/orders','CenterController@showOrders');
+    Route::post('/orders','CenterController@updateOrders');
+    Route::get('/carts','CenterController@showCarts');
+    Route::post('/carts','CenterController@updateCarts');
+    Route::get('/addr','CenterController@showAddr');
+    Route::post('/addr','CenterController@storeAddr');
+    //
 });
 
 //Route::get('hello',function (){
 //    return view('shop.Home.index');
 //});
+
+Route::group(['prefix'=>'admin'], function(){
+    Route::get('/login' ,'Admin\AdminsController@login');
+    Route::post('/logout', 'Admin\AdminsController@logout');
+    Route::get('/users','Admin\UsersController@show');
+    Route::post('/users','Admin\UsersController@store');
+    Route::get('users/addr','Admin\UsersController@showAddr');
+    Route::post('users/addr','Admin\UsersController@storeAddr');
+    Route::get('users/evaluation','Admin\UsersController@showEval');
+    Route::post('users/evaluation','Admin\UsersController@storeEval');
+
+    Route::get('/products','Admin\ProductController@show');
+    Route::post('/products','Admin\ProductController@store');
+    Route::get('/products/details','Admin\ProductController@detail');
+    Route::post('/products/details','Admin\ProductController@storeDetail');
+    Route::get('/products/images','Admin\ProductController@image');
+    Route::post('/products/images','Admin\ProductController@storeImage');
+
+    Route::get('/cate','Admin\CateController@showCate');
+    Route::post('/cate','Admin\CateController@store');
+    Route::get('/props','Admin\PropsController@show');
+    Route::post('/props','Admin\PropsController@storeProps');
+
+    Route::get('/orders','Admin\OrdersController@showOrders');
+    Route::post('/orders','Admin\OrdersController@store');
+
+}
+
+);
