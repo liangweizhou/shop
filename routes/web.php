@@ -67,12 +67,15 @@ Route::group(['prefix'=>'center'],function (){
     //
 });
 
-//Route::get('hello',function (){
-//    return view('shop.Home.index');
-//});
+Route::get('hello',function (){
+    return view('shop.Home.index');
+});
 
 Route::group(['prefix'=>'admin'], function(){
-    Route::get('/login' ,'Admin\AdminsController@login');
+    Route::get('/index' ,'Admin\HomeController@show');
+
+    Route::get('/login' ,'Admin\Auth\LoginController@show');
+    Route::post('/login' ,'Admin\Auth\LoginController@login');
     Route::post('/logout', 'Admin\AdminsController@logout');
     Route::get('/users','Admin\UsersController@show');
     Route::post('/users','Admin\UsersController@store');
