@@ -1,1 +1,3 @@
-hello
+@extends('shop.Admin.common.common')
+
+

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class CateController extends Controller
 {
     public function showCate(){
-
+        return view('shop.Admin.cate');
     }
 
     public function store(){

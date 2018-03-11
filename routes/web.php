@@ -13,7 +13,7 @@
 
 //Route::get('register','RigisterController');
 //Route::get('test','TestController@test1');
-Route::get('test','TestController@query');
+
 Route::get('updatetest','TestController@query2');
 
 Auth::routes();
@@ -40,9 +40,7 @@ Route::group(['middleware'=>['web']],function (){
     Route::any('student/detail/{id}',  'StudentController@detail');
     Route::any('student/delete/{id}', 'StudentController@delete');
 });
-Route::get('blade',function (){
-    return view('student.index');
-});
+
 
 
 
@@ -77,6 +75,8 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('/login' ,'Admin\Auth\LoginController@show');
     Route::post('/login' ,'Admin\Auth\LoginController@login');
     Route::post('/logout', 'Admin\AdminsController@logout');
+    Route::get('/admins','Admin\AdminsController@show');
+    Route::post('/admins','Admin\AdminsController@store');
     Route::get('/users','Admin\UsersController@show');
     Route::post('/users','Admin\UsersController@store');
     Route::get('users/addr','Admin\UsersController@showAddr');
@@ -84,12 +84,12 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('users/evaluation','Admin\UsersController@showEval');
     Route::post('users/evaluation','Admin\UsersController@storeEval');
 
-    Route::get('/products','Admin\ProductController@show');
-    Route::post('/products','Admin\ProductController@store');
-    Route::get('/products/details','Admin\ProductController@detail');
-    Route::post('/products/details','Admin\ProductController@storeDetail');
-    Route::get('/products/images','Admin\ProductController@image');
-    Route::post('/products/images','Admin\ProductController@storeImage');
+    Route::get('/products','Admin\ProductsController@show');
+    Route::post('/products','Admin\ProductsController@store');
+    Route::get('/products/details','Admin\ProductsController@detail');
+    Route::post('/products/details','Admin\ProductsController@storeDetail');
+    Route::get('/products/images','Admin\ProductsController@image');
+    Route::post('/products/images','Admin\ProductsController@storeImage');
 
     Route::get('/cate','Admin\CateController@showCate');
     Route::post('/cate','Admin\CateController@store');
@@ -98,7 +98,11 @@ Route::group(['prefix'=>'admin'], function(){
 
     Route::get('/orders','Admin\OrdersController@showOrders');
     Route::post('/orders','Admin\OrdersController@store');
-
 }
-
 );
+
+Route::get('test1',function (){
+    return view('test1');
+});
+
+Route::get('test','XxxController@show');

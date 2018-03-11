@@ -8,7 +8,7 @@ class ProductsController extends Controller
 {
     //
     public function show(){
-
+        return view('shop.Admin.products');
     }
     public function store(){
 

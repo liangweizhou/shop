@@ -198,7 +198,7 @@
             </div>
         </section>
     </top>
-@show
+
 
 <!--header-->
 <div class="maxbj1">
@@ -219,7 +219,7 @@
                 <em>我的购物车</em>
             </div>
         </header>
-    @show
+
 </div>
 <!--导航-->
 
@@ -247,69 +247,23 @@
                     <a href="#">xx</a>
                     <a href="#">易购专区</a>
                 </div>
-
-
-        <!--中间的大广告栏图片-->
-
-
         </nav>
-
     </section>
+
 @yield('content')
-
-
-
+    {{--<hr style="height:3px;border:none;border-top:3px groove deepskyblue;" />--}}
 @section('footer')
-
         <div class="pc-footer-top"style=" height:100px;width:100%;position:absolute;bottom:0;left:0;">
-            <div class="center">
-                <ul class="clearfix">
-                    <li>
-                        <span>关于我们</span>
-                        <a href="#">关于我们</a>
-                        <a href="#">诚聘英才</a>
-                        <a href="#">用户服务协议</a>
-                        <a href="#">网站服务条款</a>
-                        <a href="#">联系我们</a>
-                    </li>
-                    <li class="lw">
-                        <span>购物指南</span>
-                        <a href="#">新手上路</a>
-                        <a href="#">订单查询</a>
-                        <a href="#">会员介绍</a>
-                        <a href="#">网站服务条款</a>
-                        <a href="#">帮助中心</a>
-                    </li>
-                    <li class="lw">
-                        <span>消费者保障</span>
-                        <a href="#">人工验货</a>
-                        <a href="#">退货退款政策</a>
-                        <a href="#">运费补贴卡</a>
-                        <a href="#">无忧售后</a>
-                        <a href="#">先行赔付</a>
-                    </li>
-                    <li class="lw">
-                        <span>商务合作</span>
-                        <a href="#">人工验货</a>
-                        <a href="#">退货退款政策</a>
-                        <a href="#">运费补贴卡</a>
-                        <a href="#">无忧售后</a>
-                        <a href="#">先行赔付</a>
-                    </li>
-
-                </ul>
-            </div>
             <div class="pc-footer-lin">
                 <div class="center">
                     <p>
-                        copy by zlw
+                        xxxxx
                     </p>
-                    <p style="padding-bottom:30px"> copy  </p>
+
                 </div>
             </div>
         </div>
 
-@show
 <!--右下角的便捷栏-->
 @section('toolbar')
     <div class="toolbar">
@@ -323,7 +277,7 @@
         </a>
         <a href="javascript:scroll(0,0)" id="top" class="toolbar-item toolbar-item-top"></a>
     </div>
-@show
+
 </body>
 </html>
 

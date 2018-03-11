@@ -7,8 +7,8 @@ use App\Http\Controllers\Controller;
 class OrdersController extends Controller
 {
     //
-    public function show(){
-
+    public function showOrders(){
+        return view('shop.Admin.orders');
     }
 
     public function storeOrders(){

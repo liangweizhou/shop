@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 class UsersController extends Controller
 {
     public function show(){
-
+        return view('shop.Admin.user.users');
     }
 
     public function store(){

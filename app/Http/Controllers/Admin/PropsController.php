@@ -8,7 +8,7 @@ class PropsController extends Controller
 {
     //
     public function show(){
-
+        return view('shop.Admin.props');
     }
 
     public function storeProps(){
