@@ -1,16 +1,16 @@
 @extends('shop.Admin.common.common')
-
 @section('content')
     <div class="col-xs-12 col-sm-9 col-md-10">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
             <table  class="table table-striped table-border table-bordered table-bg ">
                 <thead>
                 <tr>
-                    <th scope="col" colspan="3" style="text-align: center">管理员列表</th>
+                    <th scope="col" colspan="4" style="text-align: center">商品列表</th>
                 </tr>
                 <tr>
-                    <th >姓名</th>
-                    <th>密码</th>
+                    <th >商品名</th>
+                    <th>商品码</th>
+                    <th>是否有货</th>
                     <th>操作</th>
                 </tr>
                 </thead>
@@ -19,7 +19,8 @@
                 {{--@foreach($admins as $admin)--}}
                 <tr>
                     <td class="col-md-3">x</td>
-                    <td class="col-md-7">x</td>
+                    <td class="col-md-6">x</td>
+                    <td class="col-md-1">x</td>
                     <td class="td-manage col-md-2" style="text-align: center">
                         <a><i>编辑</i></a>
                         <a><i>删除</i></a>

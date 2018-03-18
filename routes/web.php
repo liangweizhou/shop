@@ -88,13 +88,21 @@ Route::group(['prefix'=>'admin'], function(){
     Route::post('/products','Admin\ProductsController@store');
     Route::get('/products/details','Admin\ProductsController@detail');
     Route::post('/products/details','Admin\ProductsController@storeDetail');
+    Route::get('/products/add','Admin\ProductsController@add');
+    Route::post('/products/add','Admin\ProductsController@storeAdd');
     Route::get('/products/images','Admin\ProductsController@image');
     Route::post('/products/images','Admin\ProductsController@storeImage');
 
     Route::get('/cate','Admin\CateController@showCate');
     Route::post('/cate','Admin\CateController@store');
+    Route::get('/cate/add','Admin\CateController@add');
+    Route::post('/cate/add','Admin\CateController@storeAdd');
+
+
     Route::get('/props','Admin\PropsController@show');
     Route::post('/props','Admin\PropsController@storeProps');
+    Route::get('/props/add','Admin\PropsController@add');
+    Route::post('/props/add','Admin\PropsController@storeAdd');
 
     Route::get('/orders','Admin\OrdersController@showOrders');
     Route::post('/orders','Admin\OrdersController@store');

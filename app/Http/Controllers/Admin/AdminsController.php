@@ -9,7 +9,7 @@ class AdminsController extends Controller
 {
     public function show(){
 //        $admins = Admin::all()->get();
-    return view('shop.Admin.admin');
+    return view('shop.Admin.admin.admin');
     }
 
     public function store(){

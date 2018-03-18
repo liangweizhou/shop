@@ -24,7 +24,6 @@
                 <input type="radio" name="sex" value="1" {{ $user->sex == 1 ? 'checked' : '' }} data-am-ucheck> 男
                 <input type="radio" name="sex" value="0"  {{ $user->sex == 0 ? 'checked' : '' }} data-am-ucheck> 女
                 </div><br/>
-
             <div>
                 收货地址：<input id="address" type="text" class="form-control" name="address" value="{{$user->address}}" required autofocus>
             </div><br/><br/>

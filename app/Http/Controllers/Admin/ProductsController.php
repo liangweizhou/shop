@@ -8,9 +8,17 @@ class ProductsController extends Controller
 {
     //
     public function show(){
-        return view('shop.Admin.products');
+        return view('shop.Admin.products.products');
     }
     public function store(){
+
+    }
+
+    public function add(){
+        return view('shop.Admin.products.addProducts');
+    }
+
+    public function storeAdd(){
 
     }
 
@@ -21,6 +29,8 @@ class ProductsController extends Controller
     public function storeDtail(){
 
     }
+
+
 
     public function image(){
 

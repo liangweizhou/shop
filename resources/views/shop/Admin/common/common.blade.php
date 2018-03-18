@@ -54,33 +54,72 @@
     <div class="row">
         <div class="span2 col-xs-4 col-sm-3 col-md-2">
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="/admin/index">主页</a></li>
-                <li><a href="{{ url('/admin/admins') }}">管理员管理</a></li>
+                <li class="active">
+                    <a href="/admin/index">主页</a>
+                </li>
+
+                <li class="dropdown" id="">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">管理员管理
+                        <i style="font-family:'宋体';color:#666; line-height:23px; padding-right:20px; font-size:14px; float:right">>
+                        </i>
+                    </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">添加管理员</a></li>
+                    <li class="divider"></li>
+                    <li><a href="{{ url('/admin/admins') }}">管理员列表</a></li>
+                </ul>
+                </li>
+
                 <li><a href="{{ url('/admin/users') }}">用户管理</a></li>
-                <li><a href="{{ url('/admin/products') }}">商品修改</a></li>
-                <li><a href="{{ url('/admin/orders') }}">订单管理</a></li>
-                <li><a href="{{ url('/admin/cate') }}">商品类别修改</a></li>
-                <li><a href="{{ url('/admin/props') }}">商品属性修改</a></li>
+
+                <li class="dropdown" id="accountmenu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="{{ url('/admin/products') }}">商品修改
+                        <i style="font-family:'宋体';color:#666; line-height:23px; padding-right:20px; font-size:14px; float:right">>
+                        </i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{url('/admin/products/add')}}">添加商品</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{{ url('/admin/products') }}">商品列表</a></li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="{{ url('/admin/orders') }}">订单管理
+                    </a>
+                </li>
+
+                <li class="dropdown" id="accountmenu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="{{ url('/admin/cate') }}">商品类别修改
+                        <i style="font-family:'宋体';color:#666; line-height:23px; padding-right:20px; font-size:14px; float:right">>
+                        </i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{url('/admin/cate/add')}}">添加类别</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{{ url('/admin/cate') }}">类别列表</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="dropdown" id="accountmenu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="{{ url('/admin/props') }}">商品属性修改
+                        <i style="font-family:'宋体';color:#666; line-height:23px; padding-right:20px; font-size:14px; float:right">>
+                        </i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{url('/admin/props/add')}}">添加属性</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{{ url('/admin/props') }}">属性列表</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
-        {{--<div class="col-xs-12 col-sm-9 col-md-10">--}}
-        {{--<div class="col-xs-12 col-sm-6 col-md-3" style="border:1px solid;">--}}
-        {{--aaaaa--}}
-        {{--</div>--}}
-        {{--<div class="col-xs-12 col-sm-6 col-md-3" style="border:1px solid;">--}}
-        {{--aaaaa--}}
-        {{--</div>--}}
-        {{--<div class="col-xs-12 col-sm-6 col-md-3" style="border:1px solid;">--}}
-        {{--aaaaa--}}
-        {{--</div>--}}
-        {{--<div class="col-xs-12 col-sm-6 col-md-3" style="border:1px solid;">--}}
-        {{--aaaaa--}}
-        {{--</div>--}}
-        {{--</div>--}}
-        <div>
-            @yield('content')
-            </div>
 
+        <div class="span2 col-xs-8 col-sm-9 col-md-10 col-lg-10">
+            @yield('content')
+        </div>
 
     </div>
 </div>
@@ -91,5 +130,13 @@
     @yield('footer')
     这里可以放底部
 </div>
+{{--<script type="text/javascript" src="/try/bootstrap/twitter-bootstrap-v2/docs/assets/js/jquery.js"></script>--}}
+{{--<script type="text/javascript" src="/try/bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-dropdown.js"></script>--}}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.dropdown-toggle').dropdown();
+    });
+</script>
+
 </body>
 </html>

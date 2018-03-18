@@ -7,10 +7,18 @@ use Illuminate\Http\Request;
 class CateController extends Controller
 {
     public function showCate(){
-        return view('shop.Admin.cate');
+        return view('shop.Admin.cates.cate');
     }
 
     public function store(){
+
+    }
+
+    public function add(){
+        return view('shop.Admin.cates.addCates');
+    }
+
+    public function storeAdd(){
 
     }
 }

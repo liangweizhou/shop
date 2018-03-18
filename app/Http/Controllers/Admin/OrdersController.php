@@ -8,7 +8,7 @@ class OrdersController extends Controller
 {
     //
     public function showOrders(){
-        return view('shop.Admin.orders');
+        return view('shop.Admin.orders.orders');
     }
 
     public function storeOrders(){
